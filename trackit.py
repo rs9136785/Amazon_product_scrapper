@@ -26,33 +26,10 @@ def check_price():
     a = locale.atof(converted_price)
 
 
-
-    if(a < 95000):
-        send_email()
-
     print(converted_price)
     print(title.strip())
 
 
-
-def send_email():
-    server = smtplib.SMTP('smtp.gmail.com', 587)
-    server.ehlo()  # stablishing connection with the server and the gmail
-    server.starttls()
-    server.ehlo()
-
-    server.login('toprashantshekhar@gmail.com', 'ccrpfiobzjfxhwgh')
-
-    subject = " Hey The Price Fall Bellow 95,000 !! "
-    body = " Check the Amazon link https://www.amazon.in/Apple-MacBook-13-inch-Display-Dual-core/dp/B07KJQFNDQ/ref=asc_df_B07KJQFNDQ/?tag=googleshopdes-21&linkCode=df0&hvadid=397081131104&hvpos=1o4&hvnetw=g&hvrand=10860277668779493853&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1007826&hvtargid=pla-614523065262&psc=1&ext_vrnc=hi"
-
-    msg = f"Subject : { subject}\n\n{body}"
-
-    server.sendmail('kabirajcp.com', 'toprashantshekhar@gmail.com', msg )
-    
-    print('HEY EMAIL HAS BEEN SENT!')
-
-    server.quit()  # quit the server
     
 check_price()
 
@@ -62,3 +39,4 @@ check_price()
 # while(True):
 #     check_price()
 #     time.sleep(60*60*24)
+
